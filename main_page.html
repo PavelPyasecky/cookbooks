@@ -7,15 +7,14 @@
 </head>
 <body>
     <div class="container">
-        <header class="header">
-            <div class="logo">Feedme</div>
-            <button>Cookbooks</button>
-            <button>Recepies</button>
-            <div class="search-form"></div>
-            <button>Sign In</button>
-            <button>Sign Up</button>
+        <header class="header header-container">
+            <span class="header__logo">Feed<b class="logo_me">me</b></span>
+            <button class="header__btn btn_cookbooks">Cookbooks</button>
+            <button class="header__btn btn_recepies">Recepies</button>
+                <input class="search-form" type="text"/>
+            <button class="header__btn btn_sign-in">Sign In</button>
+            <button class="header__btn btn_sign-up">Sign Up</button>
         </header>
-<!--        <header>This is my lovely blog</header>-->
         <article>
             <h1>My article</h1>
             <p>Duis felis orci, pulvinar id metus ut, rutrum luctus orci. Cras porttitor imperdiet nunc, at ultricies tellus laoreet sit amet. Sed auctor cursus massa at porta. Integer ligula ipsum, tristique sit amet orci vel, viverra egestas ligula. Curabitur vehicula tellus neque, ac ornare ex malesuada et. In vitae convallis lacus. Aliquam erat volutpat. Suspendisse ac imperdiet turpis. Aenean finibus sollicitudin eros pharetra congue. Duis ornare egestas augue ut luctus. Proin blandit quam nec lacus varius commodo et a urna. Ut id ornare felis, eget fermentum sapien.</p>
@@ -24,7 +23,17 @@
         </article>
         <aside><h2>Other things</h2>
             <p>Nam vulputate diam nec tempor bibendum. Donec luctus augue eget malesuada ultrices. Phasellus turpis est, posuere sit amet dapibus ut, facilisis sed est.</p></aside>
-        <footer>Contact me@mysite.com</footer>
+        <footer class="footer footer-container">
+            <span class="footer__logo">Feed<b class="logo_me">me</b></span>
+            <a class="footer__link link_cookbooks">Cookbooks</a>
+            <a class="footer__link link_recepies">Recepies</a>
+            <a class="footer__link link_about-us">About Us</a>
+            <a class="footer__link link_email">plzfeedme@itechart.com</a>
+            <div class="link_sign">
+                <a class="footer__link link_sign-top">Study Project</a>
+                <a class="footer__link link_sign-bottom">iTechArt, 2020</a>
+            </div>
+        </footer>
     </div>
 </body>
 </html>

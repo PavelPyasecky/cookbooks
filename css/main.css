@@ -1,70 +1,169 @@
 @font-face {
     font-family: "Nunito";
     src: url("../fonts/Nunito/Nunito-VariableFont_wght.ttf");
-    src: url("../fonts/Nunito/Nunito-Italic-VariableFont_wght.ttf");
+}
+
+:root {
+    --bar-height: 65px;
+    --color-primary: #ffffff
+}
+
+body {
+    font-family: Nunito, sans-serif;
+    margin: 0;
 }
 
 .container {
     display: grid;
     grid-template-areas:
         "header header"
-        "sidebar content"
+        "sidebar article"
         "footer footer";
     grid-template-columns: 1fr 3fr;
-    grid-auto-rows: minmax(65px, auto);  /*65px;*/
+    grid-auto-rows: minmax(65px, auto);
     gap: 20px;
 }
 
-header {
+.header {
     grid-area: header;
-    background-color: rgb(207,232,220);
+    background: #FFFFFF;
+    align-items: center;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
 }
 
-.logo {
-    font-family: Nunito, serif;
+.header-container {
+    display: grid;
+    grid-template-areas:
+        ". logo . cookbooks recepies search-form . . sign-in . sign-up .";
+    grid-template-columns: minmax(auto, 165px) 87px minmax(45px, 73px) 125px 118px minmax(80px, 547px) 45px auto 65px 30px 65px minmax(auto, 165px);
+    grid-template-rows: 65px;
+    width: 100%;
+}
+
+.header__logo {
+    font-family: Nunito, sans-serif;
     font-size: 24px;
     font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     line-height: 33px;
-    letter-spacing: 0em;
-    text-align: left;
+    display: flex;
+    align-items: center;
+    grid-area: logo;
 }
 
-body {
-    font-family: Nunito;
+.logo_me {
+    color: #fdb601;
 }
+
+.header__btn {
+    height: 100%;
+    background-color: inherit;
+    border: none;
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.btn_cookbooks {
+    width: 80px;
+    text-align: center;
+    grid-area: cookbooks;
+}
+
+.btn_recepies {
+    width: 73px;
+    grid-area: recepies;
+}
+
+.btn_sign-in {
+    width: 65px;
+    text-align: right;
+    grid-area: sign-in;
+}
+
+.btn_sign-up {
+    width: 70px;
+    text-align: right;
+    grid-area: sign-up;
+}
+
+.search-form-wrapper {
+    width: 381px;
+    grid-area: search-form;
+}
+
+.search-form {
+    height: 35px;
+    width: 100%;
+    border-radius: 37px;
+    background: #EEEEEE;
+    border: none;
+    padding-left: 5px;
+    grid-area: search-form;
+}
+
+.footer {
+    grid-area: footer;
+    background: #1B1C20;
+    color: #ffffff;
+    align-items: center;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-areas:
+        ". logo-ft . cookbooks-ft recepies-ft about-us . email . sign .";
+    grid-template-columns: minmax(auto, 165px) 87px minmax(45px, 103px) 149px 131px 85px 50px 180px minmax(50px, auto) 120px minmax(auto, 165px);
+    grid-template-rows: 65px;
+    width: 100%;
+}
+
+.footer__logo {
+    font-family: Nunito, sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: bold;
+    line-height: 33px;
+    display: flex;
+    grid-area: logo-ft;
+}
+
+.link_cookbooks {
+    width: 99px;
+    text-align: center;
+    grid-area: cookbooks-ft;
+}
+
+.link_recepies {
+    width: 81px;
+    grid-area: recepies-ft;
+}
+
+.link_about-us {
+    width: 85px;
+    grid-area: about-us;
+}
+
+.link_email {
+    width: 223px;
+    grid-area: email;
+}
+
+.link_sign {
+    width: 120px;
+    grid-area: sign;
+}
+
+
 
 article {
-    grid-area: content;
+    grid-area: article;
 }
 
 aside {
     grid-area: sidebar;
 }
-
-footer {
-    grid-area: footer;
-    background-color: rgb(207,232,220);
-}
-
-/*header {*/
-/*    grid-column: 1/3;*/
-/*    grid-row: 1;*/
-/*    background-color: rgb(207,232,220);*/
-/*}*/
-
-/*article {*/
-/*    grid-column: 2;*/
-/*    grid-row: 2;*/
-/*}*/
-
-/*aside {*/
-/*    grid-column: 1;*/
-/*    grid-row: 2;*/
-/*}*/
-
-/*footer {*/
-/*    grid-column: 1/3;*/
-/*    grid-row: 3;*/
-/*    background-color: rgb(207,232,220);*/
-/*}*/
