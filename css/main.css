@@ -17,11 +17,12 @@ body {
     display: grid;
     grid-template-areas:
         "header header"
+        "bg bg"
         "sidebar article"
         "footer footer";
-    grid-template-columns: 1fr 3fr;
-    grid-auto-rows: minmax(65px, auto);
-    gap: 20px;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 65px 680px auto 65px;
+    /*grid-auto-rows: minmax(65px, auto);*/
 }
 
 .header {
@@ -105,6 +106,48 @@ body {
     padding-left: 5px;
     grid-area: search-form;
 }
+
+.bg {
+    display: flex;
+    flex-direction: row;
+    grid-area: bg;
+    background: #1B1C20;
+}
+
+.bg-pouring {
+    color: #ffffff;
+    flex: 1 200px;
+    flex-flow: row wrap;
+    border: none;
+}
+
+.bg-img {
+    background: url("../img/pan.png") no-repeat;
+    height: 680px;
+    border: none;
+    /*grid-area: bg-img;*/
+}
+
+.greeting-text {
+    font-family: Nunito;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 72px;
+    letter-spacing: 0em;
+    text-align: left;
+
+}
+
+/*.bg-pouring {*/
+/*    background: #1B1C20;*/
+/*    grid-area: bg-pouring;*/
+/*}*/
+
+/*.bg-img {*/
+/*    background: url("../img/pan.png") no-repeat;*/
+/*    grid-area: bg-img;*/
+/*}*/
 
 .footer {
     grid-area: footer;
