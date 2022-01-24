@@ -107,8 +107,20 @@ body {
     grid-area: search-form;
 }
 
+.bg-container {
+    display: grid;
+    grid-template-areas:
+        ". greeting-text ."
+        ". btn_create .";
+    grid-template-columns: minmax(auto, 165px) minmax(230px, 740px) minmax(45px, auto);
+    /*grid-template-rows: 65px;*/
+    width: 100%;
+}
+
 .bg {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
     flex-direction: row;
     grid-area: bg;
     background: #1B1C20;
@@ -116,8 +128,6 @@ body {
 
 .bg-pouring {
     color: #ffffff;
-    flex: 1 200px;
-    flex-flow: row wrap;
     border: none;
 }
 
@@ -125,18 +135,38 @@ body {
     background: url("../img/pan.png") no-repeat;
     height: 680px;
     border: none;
-    /*grid-area: bg-img;*/
 }
 
 .greeting-text {
-    font-family: Nunito;
     font-size: 56px;
     font-style: normal;
     font-weight: 800;
     line-height: 72px;
     letter-spacing: 0em;
     text-align: left;
+    grid-area: greeting-text;
+    margin-bottom: 0;
+}
 
+.btn_create {
+    font-family: Nunito, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 44px;
+    color: #000000;
+    background: #F7B602;
+    border-radius: 38px;
+    width: 230px;
+    height: 48px;
+    grid-area: btn_create;
+    grid-gap: 44px;
 }
 
 /*.bg-pouring {*/
