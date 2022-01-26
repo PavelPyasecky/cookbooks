@@ -3,6 +3,23 @@
     src: url("../fonts/Nunito/Nunito-VariableFont_wght.ttf");
 }
 
+/* Rules for sizing the icon. */
+.material-icons-outlined.md-12 { font-size: 12px; }
+.material-icons-outlined.md-16 { font-size: 16px; }
+.material-icons-outlined.md-18 { font-size: 18px; }
+.material-icons-outlined.md-22 { font-size: 22px; }
+.material-icons-outlined.md-24 { font-size: 24px; }
+.material-icons-outlined.md-36 { font-size: 36px; }
+.material-icons-outlined.md-48 { font-size: 48px; }
+
+/* Rules for using icons as black on a light background. */
+.material-icons-outlined.md-dark { color: rgba(0, 0, 0, 0.54); }
+.material-icons-outlined.md-dark.md-inactive { color: rgba(0, 0, 0, 0.26); }
+
+/* Rules for using icons as white on a dark background. */
+.material-icons-outlined.md-light { color: rgba(255, 255, 255, 1); }
+.material-icons-outlined.md-light.md-inactive { color: rgba(255, 255, 255, 0.3); }
+
 :root {
     --bar-height: 65px;
     --color-primary: #ffffff
@@ -175,14 +192,13 @@ body {
     grid-area: content;
 }
 
-.card-header {
+.popular {
     display: flex;
     text-align: center;
     margin-top: 90px;
-    margin-bottom: 32px;
 }
 
-.card-header__text {
+.popular__text {
     font-family: Nunito;
     font-style: normal;
     font-weight: bold;
@@ -196,7 +212,7 @@ body {
     display: flex;
     flex-flow: row wrap;
     /*align-items: center;*/
-    /*justify-content: center;*/
+    justify-content: center;
     grid-area: card-container;
 }
 
@@ -204,19 +220,33 @@ body {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    margin: 0 30px;
+    margin: 30px 15px 0;
     padding: 15px 20px;
     background: #FFFFFF;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
-    flex: 2 255px;
-    box-sizing: content-box;
-    width: 255px;
+    flex: 0 0 255px;
+    box-sizing: border-box;
+    color: #515151;
 }
 
 .card__header {
-    text-align: left;
-    width: 215px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 9px;
+    align-self: flex-start;
+}
+
+.card-header__text {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.card-header-icon {
+    margin-right: 8px;
 }
 
 .card__img {
@@ -224,6 +254,7 @@ body {
     width: 215px;
     border: none;
     border-radius: 8px;
+    margin-bottom: 10px;
 }
 
 .card__title {
@@ -233,6 +264,45 @@ body {
     font-size: 20px;
     line-height: 27px;
     align-items: self-start;
+    align-self: flex-start;
+    color: #000000;
+}
+
+.card__author {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #474747;
+    align-self: flex-start;
+    margin-bottom: 22px;
+}
+
+.card__footer {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+}
+
+.card-like-icon{
+    margin-right: 8px;
+}
+
+.card-comment-icon{
+    margin-right: 8px;
+}
+
+.card-footer-container {
+    display: flex;
+    align-items: center;
 }
 
 .footer {
