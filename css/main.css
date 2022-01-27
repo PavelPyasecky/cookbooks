@@ -9,6 +9,7 @@
 .material-icons-outlined.md-18 { font-size: 18px; }
 .material-icons-outlined.md-22 { font-size: 22px; }
 .material-icons-outlined.md-24 { font-size: 24px; }
+.material-icons-outlined.md-26 { font-size: 26px; }
 .material-icons-outlined.md-36 { font-size: 36px; }
 .material-icons-outlined.md-48 { font-size: 48px; }
 
@@ -36,12 +37,11 @@ body {
     grid-template-areas:
         "header header header"
         "bg bg bg"
-        ". content ."
+        "content content content"
         ". sidebar ."
         ". article ."
         "footer footer footer";
     grid-template-columns: minmax(auto, 165px) auto minmax(auto, 165px);
-    /*grid-template-rows: minmax(auto, 165px) auto minmax(auto, 165px);*/
 }
 
 .header {
@@ -192,13 +192,13 @@ body {
     grid-area: content;
 }
 
-.popular {
+.main-header {
     display: flex;
     text-align: center;
     margin-top: 90px;
 }
 
-.popular__text {
+.main-header__text {
     font-family: Nunito;
     font-style: normal;
     font-weight: bold;
@@ -250,8 +250,7 @@ body {
 }
 
 .card__img {
-    height: 215px;
-    width: 215px;
+    width: 100%;
     border: none;
     border-radius: 8px;
     margin-bottom: 10px;
@@ -303,6 +302,24 @@ body {
 .card-footer-container {
     display: flex;
     align-items: center;
+}
+
+.main-header__trends {
+    margin-top: 110px;
+    padding-top: 65px;
+}
+
+.card__trends {
+    flex: 0 0 350px;
+}
+
+.card-author__trends {
+    margin-bottom: 0;
+}
+
+.trends {
+    background-color: #F7B602;
+    padding-bottom: 79px;
 }
 
 .footer {
