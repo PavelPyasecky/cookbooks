@@ -38,8 +38,6 @@ body {
         "header header header"
         "bg bg bg"
         "content content content"
-        ". sidebar ."
-        ". article ."
         "footer footer footer";
     grid-template-columns: minmax(auto, 165px) auto minmax(auto, 165px);
 }
@@ -211,8 +209,8 @@ body {
 .card-container {
     display: flex;
     flex-flow: row wrap;
-    /*align-items: center;*/
-    justify-content: center;
+    align-content: space-evenly;
+    justify-content: space-evenly;
     grid-area: card-container;
 }
 
@@ -254,6 +252,10 @@ body {
     border: none;
     border-radius: 8px;
     margin-bottom: 10px;
+}
+
+.card-img__picked:first-child {
+
 }
 
 .card__title {
@@ -322,6 +324,47 @@ body {
     padding-bottom: 79px;
 }
 
+.img-container {
+    display: flex;
+    flex-flow: row wrap;
+    grid-area: card-container;
+}
+
+.img-container__left {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    grid-area: card-container;
+    height: 255px;
+    width: 100%;
+}
+
+.img-container__right {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    grid-area: card-container;
+    height: 255px;
+    width: 100%;
+}
+
+.img-size_l {
+    flex: 4 1 540px;
+    background: center / contain no-repeat url("../img/pancakes.png");
+}
+
+.img-size_m {
+    flex: 2 1 540px;
+    background: center / contain no-repeat url("../img/ice-cream.png");}
+
+.img-size_s-left {
+    flex: 1 1 255px;
+    background: center / contain no-repeat url("../img/breakfast.png");}
+
+.img-size_s-right {
+    flex: 1 1 255px;
+    background: center / contain no-repeat url("../img/fruits_&_vegetables.png");}
+
 .footer {
     grid-area: footer;
     background: #1B1C20;
@@ -333,7 +376,7 @@ body {
     display: grid;
     grid-template-areas:
         ". logo-ft . cookbooks-ft recepies-ft about-us . email . sign .";
-    grid-template-columns: minmax(auto, 165px) 87px minmax(45px, 103px) 149px 131px 85px 50px 180px minmax(50px, auto) 120px minmax(auto, 165px);
+    grid-template-columns: minmax(auto, 165px) 87px minmax(auto, 103px) 149px 131px 85px 50px 180px minmax(50px, auto) 120px minmax(auto, 165px);
     grid-template-rows: 65px;
     width: 100%;
 }
@@ -372,14 +415,4 @@ body {
 .link_sign {
     width: 120px;
     grid-area: sign;
-}
-
-
-
-article {
-    grid-area: article;
-}
-
-aside {
-    grid-area: sidebar;
 }
