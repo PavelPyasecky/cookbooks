@@ -23,12 +23,23 @@
 
 :root {
     --bar-height: 65px;
-    --color-primary: #ffffff
+    --color-primary: #FCFAF8;
+    --color-secondary: #F7B602;
+    --color-bg-header: #FFFFFF;
+    --color-bg-banner: #1B1C20;
+    --color-bg-card: #FFFFFF;
+    --color-bg-search-form: #EEEEEE;
+    --color-logo-second-part: #fdb601;
+    --color-text-banner: #FFFFFF;
+    --color-text-card-primary: #515151;
+    --color-text-card-title: #000000;
+    --color-text-card-subtitle: #474747;
+
 }
 
 body {
     font-family: Nunito, sans-serif;
-    background: #FCFAF8;
+    background: var(--color-primary);
     margin: 0;
 }
 
@@ -37,7 +48,7 @@ body {
     display: grid;
     grid-template-areas:
         "header header header"
-        "bg bg bg"
+        "banner banner banner"
         "content content content"
         "footer footer footer";
     grid-template-columns: minmax(auto, 165px) auto minmax(auto, 165px);
@@ -45,7 +56,7 @@ body {
 
 /* Header description */
 .header {
-    background: #FFFFFF;
+    background: var(--color-bg-header);
     align-items: center;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.12);
     grid-area: header;
@@ -71,8 +82,8 @@ body {
     grid-area: logo;
 }
 
-.logo_me {
-    color: #fdb601;
+.logo--second-part {
+    color: var(--color-logo-second-part);
 }
 
 .header__btn {
@@ -88,24 +99,24 @@ body {
     align-items: center;
 }
 
-.btn_cookbooks {
+.btn--first {
     width: 80px;
     text-align: center;
     grid-area: cookbooks;
 }
 
-.btn_recepies {
+.btn--second {
     width: 73px;
     grid-area: recepies;
 }
 
-.btn_sign-in {
+.btn--sign-in {
     width: 65px;
     text-align: right;
     grid-area: sign-in;
 }
 
-.btn_sign-up {
+.btn--sign-up {
     width: 70px;
     text-align: right;
     grid-area: sign-up;
@@ -120,44 +131,43 @@ body {
     height: 35px;
     width: 100%;
     border-radius: 37px;
-    background: #EEEEEE;
+    background: var(--color-bg-search-form);
     border: none;
-    padding-left: 5px;
+    padding-left: 15px;
     grid-area: search-form;
 }
 
 /* Background container description */
-.bg-container {
+.banner--container {
     display: grid;
     grid-template-areas:
         ". greeting-text ."
         ". btn_create .";
     grid-template-columns: minmax(auto, 165px) minmax(230px, 740px) minmax(45px, auto);
-    /*grid-template-rows: 65px;*/
     width: 100%;
 }
 
-.bg {
+.banner {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
-    grid-area: bg;
-    background: #1B1C20;
+    grid-area: banner;
+    background: var(--color-bg-banner);
 }
 
-.bg-pouring {
-    color: #ffffff;
+.banner__left-side {
+    color: var(--color-text-banner);
     border: none;
 }
 
-.bg-img {
+.banner__img {
     background: url("../img/pan.png") no-repeat;
     height: 680px;
     border: none;
 }
 
-.greeting-text {
+.banner-text {
     font-size: 56px;
     font-style: normal;
     font-weight: 800;
@@ -168,7 +178,7 @@ body {
     margin-bottom: 0;
 }
 
-.btn_create {
+.btn-create {
     font-family: Nunito, sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -180,13 +190,14 @@ body {
     text-align: center;
     text-transform: capitalize;
     margin-top: 44px;
-    color: #000000;
-    background: #F7B602;
+    color: var(--color-bg-banner);
+    background: var(--color-secondary);
     border-radius: 38px;
     width: 230px;
     height: 48px;
     grid-area: btn_create;
     grid-gap: 44px;
+    cursor: pointer;
 }
 
 /* Content description */
@@ -225,12 +236,12 @@ body {
     align-items: center;
     margin: 30px 15px 0;
     padding: 15px 20px;
-    background: #FFFFFF;
+    background: var(--color-bg-card);
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.06);
     border-radius: 10px;
     flex: 0 0 255px;
     box-sizing: border-box;
-    color: #515151;
+    color: var(--color-text-card-primary);
 }
 
 .card__header {
@@ -267,7 +278,7 @@ body {
     line-height: 27px;
     align-items: self-start;
     align-self: flex-start;
-    color: #000000;
+    color: var(--color-text-card-title);
 }
 
 .card__author {
@@ -276,7 +287,7 @@ body {
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;
-    color: #474747;
+    color: var(--color-text-card-subtitle);
     align-self: flex-start;
     margin-bottom: 22px;
 }
@@ -357,25 +368,25 @@ body {
 
 }
 
-.img-size_l {
+.img-size--l {
     flex: 0 0 540px;
 }
 
-.img-size_m {
+.img-size--m {
     flex: 1 1 540px;
 }
 
-.img-size_s-left {
+.img-size--s-left {
     flex: 1 1 220px;
 }
 
-.img-size_s-right {
+.img-size--s-right {
     flex: 1 1 220px;
 }
 
 /* Trends container description */
 .trends {
-    background-color: #F7B602;
+    background-color: var(--color-secondary);
     padding-bottom: 79px;
 }
 
@@ -395,8 +406,8 @@ body {
 /* Footer description */
 .footer {
     grid-area: footer;
-    background: #1B1C20;
-    color: #ffffff;
+    background: var(--color-bg-banner);
+    color: var(--color-bg-header);
     align-items: center;
 }
 
@@ -419,28 +430,28 @@ body {
     grid-area: logo-ft;
 }
 
-.link_cookbooks {
+.link--first {
     width: 99px;
     text-align: center;
     grid-area: cookbooks-ft;
 }
 
-.link_recepies {
+.link--second {
     width: 81px;
     grid-area: recepies-ft;
 }
 
-.link_about-us {
+.link--about-us {
     width: 85px;
     grid-area: about-us;
 }
 
-.link_email {
+.link--email {
     width: 223px;
     grid-area: email;
 }
 
-.link_sign {
+.link--sign {
     width: 120px;
     grid-area: sign;
 }
